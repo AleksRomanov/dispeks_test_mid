@@ -18,6 +18,7 @@ import {
 } from '@tanstack/react-query'
 import {ReactQueryDevtools} from '@tanstack/react-query-devtools';
 import axios from 'axios';
+import {MenuProps} from "antd";
 
 
 const queryClient = new QueryClient()
@@ -134,31 +135,26 @@ function Example() {
                     nullable: boolean;
                     readOnly: boolean;
                 }>),
-
-
     })
     // console.log("LOG -", data);
 
-    // const streetsJson = [];
-    // data.forEach((element) => {
-    //     streetsJson.push({
-    //         city: element.city,
-    //         cityId: element.cityId,
-    //         id: element.id,
-    //         name: element.name,
-    //         nameWithPrefix: element.nameWithPrefix,
-    //         prefix: {
-    //             id: element.prefix.id,
-    //             name: element.prefix.name,
-    //             shortName: element.prefix.shortName,
-    //         }
-    //     })
-    // })
+
     useEffect(() => {
-        console.log(data)
+        const streetsJson: MenuProps['items'] = [];
+        if (data) {
+            data.forEach((element) => {
+                streetsJson.push({
+                    key: element.id,
+                    type: 'group',
+                    label: element.city,
+                })
+
+            })
+        }
+        console.log("streetsJson -", streetsJson);
+        // console.log(data)
     }, [data])
 
-    // console.log("streetsJson -", streetsJson);
 
     if (isPending) return 'Loading...'
 
