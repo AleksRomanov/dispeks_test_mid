@@ -1,0 +1,27 @@
+---
+import 'antd/dist/antd.min.js';
+import 'antd/dist/reset.css';
+import Layout from '../layouts/Layout.astro';
+import Header from "../components/Header.jsx";
+import Teaser from "../components/Teaser.jsx";
+import Services from '../components/Services.jsx';
+import TypeTranslation from "../components/TypeTranslation.jsx";
+import WuGet from "../components/WuGet.jsx";
+import Footer from "../components/Footer.jsx";
+---
+<Layout title="Asia Speak">
+    <main>
+        <Header client:load/>
+        <Teaser client:load/>
+        <Services client:load/>
+        <TypeTranslation client:load/>
+        <WuGet client:load/>
+        <Footer client:load/>
+    </main>
+</Layout>
+<script>
+    import React from 'react';
+    import 'antd/dist/antd.min.js';
+    import 'antd/dist/reset.css';
+</script>
+

@@ -1,25 +1,17 @@
 {
+  "extends": "astro/tsconfigs/base",
   "compilerOptions": {
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "skipLibCheck": true,
+    "strictNullChecks": true,
+    "allowJs": true,
+    "baseUrl": "C:Users/AdminDev/Documents/Dev/Backup_Lena_Site_Finally/asia-speak",
 
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
+    "paths": {
+      "~/*": [
+        "src/*"
+      ]
+//      "antd": ["src/components/antd"]
+    },
     "jsx": "react-jsx",
-
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
-  },
-  "include": ["src", "types"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+    "jsxImportSource": "react"
+  }
 }
